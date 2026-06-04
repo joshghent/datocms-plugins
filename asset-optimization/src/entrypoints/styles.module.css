@@ -1,9 +1,11 @@
 :root {
-  --text-color: var(--color--ink);
-  --text-color-light: var(--color--ink-subtle);
-  --green-color: var(--color--ink-success);
-  --yellow-color: var(--color--ink-warning);
-  --red-color: var(--color--ink-danger);
+  --accent-color: #6c5ce7;
+  --border-color: #e1e5eb;
+  --text-color: #4a4a4a;
+  --text-color-light: #767676;
+  --green-color: #27ae60;
+  --yellow-color: #f1c40f;
+  --red-color: #e74c3c;
   --spacing-xs: 4px;
   --spacing-s: 8px;
   --spacing-m: 16px;
@@ -21,8 +23,8 @@
 .assetListCard {
   margin-top: var(--spacing-m);
   border-radius: 8px;
-  background-color: var(--color--surface);
-  border: 1px solid var(--color--border);
+  background-color: white;
+  border: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   position: relative;
@@ -49,8 +51,8 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-m);
-  background-color: var(--color--surface-muted);
-  border-bottom: 1px solid var(--color--border);
+  background-color: var(--light-bg-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .assetListHeaderTitle {
@@ -62,7 +64,7 @@
 .assetListHeaderTitle h3 {
   margin: 0;
   font-size: var(--font-size-m);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
@@ -78,7 +80,7 @@
   border-radius: 14px;
   font-size: var(--font-size-xs);
   font-weight: 600;
-  color: var(--color--primary--ink);
+  color: white;
   margin-right: var(--spacing-xs);
 }
 
@@ -95,13 +97,13 @@
 }
 
 .badgeBlue {
-  background-color: var(--color--primary--surface);
+  background-color: var(--accent-color);
 }
 
 .noAssetsMessage {
   padding: var(--spacing-l);
   text-align: center;
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   font-style: italic;
 }
 
@@ -115,7 +117,7 @@
 
 .assetListItem {
   padding: var(--spacing-m);
-  border-bottom: 1px solid var(--color--border);
+  border-bottom: 1px solid var(--border-color);
   transition: background-color 0.2s ease;
 }
 
@@ -124,7 +126,7 @@
 }
 
 .assetListItem:hover {
-  background-color: var(--color--surface-hover);
+  background-color: rgba(0, 113, 235, 0.05);
 }
 
 .assetItemContent {
@@ -143,8 +145,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color--primary--surface);
-  color: var(--color--primary--ink);
+  background-color: var(--accent-color);
+  color: white;
   font-size: var(--font-size-xs);
   font-weight: 600;
   border-radius: 4px;
@@ -185,7 +187,7 @@
 }
 
 .sizeLabel {
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   font-size: var(--font-size-xs);
 }
 
@@ -203,7 +205,7 @@
 }
 
 .sizeArrow {
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   margin: 0 var(--spacing-xs);
 }
 
@@ -213,7 +215,7 @@
   border-radius: 4px;
   font-size: var(--font-size-xxs);
   font-weight: 600;
-  color: var(--color--primary--ink);
+  color: white;
   margin-left: var(--spacing-xs);
 }
 
@@ -236,30 +238,30 @@
 
 .header {
   margin-bottom: var(--spacing-l);
-  border-bottom: 1px solid var(--color--border);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: var(--spacing-m);
 }
 
 .headerTitle {
   font-size: 28px;
   margin-bottom: var(--spacing-s);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
 }
 
 .description {
   font-size: 16px;
   line-height: 1.5;
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   max-width: 600px;
 }
 
 .card {
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   padding: var(--spacing-l);
   margin-bottom: var(--spacing-l);
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
 }
 
 .stats {
@@ -273,23 +275,23 @@
 .statItem {
   flex: 1;
   min-width: 120px;
-  background-color: var(--color--surface-muted);
+  background-color: var(--light-bg-color);
   border-radius: 8px;
   padding: var(--spacing-m);
   text-align: center;
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
 }
 
 .statValue {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 4px;
-  color: var(--color--ink-link);
+  color: var(--accent-color);
 }
 
 .statLabel {
   font-size: 14px;
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
 }
 
 .optimizingContainer {
@@ -298,29 +300,29 @@
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-l);
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
 }
 
 .statusText {
   margin-top: var(--spacing-m);
   font-weight: 500;
-  color: var(--color--ink-link);
+  color: var(--accent-color);
 }
 
 .percentageText {
   margin-top: var(--spacing-xs);
   font-weight: 500;
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   font-size: 18px;
 }
 
 .progressBar {
   width: 100%;
   height: 10px;
-  background-color: var(--color--surface-muted);
+  background-color: var(--light-bg-color);
   border-radius: 5px;
   margin-top: var(--spacing-m);
   overflow: hidden;
@@ -332,8 +334,8 @@
   height: 100%;
   background: linear-gradient(
     to right,
-    var(--color--primary--surface),
-    var(--color--primary--surface-hover)
+    var(--accent-color),
+    rgba(108, 92, 231, 0.7)
   );
   transition: width 0.3s ease;
   border-radius: 5px;
@@ -345,17 +347,17 @@
 .resultContainer {
   margin-top: var(--spacing-l);
   padding: var(--spacing-l);
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
 }
 
 .resultTitle {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: var(--spacing-m);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   display: flex;
   align-items: center;
 }
@@ -367,9 +369,9 @@
 
 .logWrapper {
   margin-top: var(--spacing-l);
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: var(--color--surface-muted);
+  background-color: var(--light-bg-color);
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ensures rounded corners work with fixed header */
@@ -380,8 +382,8 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-m);
-  border-bottom: 1px solid var(--color--border);
-  background-color: var(--color--surface-muted);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--light-bg-color);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -425,7 +427,7 @@
 }
 
 .logEntry:nth-child(odd) {
-  background-color: var(--color--surface-hover);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .buttonContainer {
@@ -435,7 +437,7 @@
 }
 
 .optimizeButton {
-  background-color: var(--color--primary--surface) !important;
+  background-color: var(--accent-color) !important;
   transition: all 0.2s ease !important;
 }
 
@@ -446,7 +448,7 @@
 
 .infoIcon {
   margin-right: 8px;
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   display: inline-flex;
   align-items: center;
 }
@@ -460,7 +462,7 @@
 .noAssetsMessage {
   text-align: center;
   padding: var(--spacing-l);
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   font-style: italic;
 }
 
@@ -475,25 +477,25 @@
 .clickable:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-color: var(--color--selected--border);
+  border-color: var(--accent-color);
 }
 
 .clickable:focus {
   outline: none;
-  border-color: var(--color--selected--border);
-  box-shadow: 0 0 0 2px var(--color--focus--outline);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 113, 235, 0.3);
 }
 
 .assetListContainer {
   margin: var(--spacing-l) 0;
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
 }
 
 .assetListHeader {
@@ -501,21 +503,21 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-m);
-  background-color: var(--color--surface-muted);
-  border-bottom: 1px solid var(--color--border);
+  background-color: var(--light-bg-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .assetListTitle {
   margin: 0;
   font-size: var(--font-size-l);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
 }
 
 .closeButton {
   background: none;
   border: none;
   font-size: var(--font-size-xl);
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   cursor: pointer;
   padding: 0;
   display: flex;
@@ -527,13 +529,13 @@
 }
 
 .closeButton:hover {
-  background-color: var(--color--border);
-  color: var(--color--ink-link);
+  background-color: var(--border-color);
+  color: var(--accent-color);
 }
 
 .closeButton:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color--focus--outline);
+  box-shadow: 0 0 0 2px rgba(0, 113, 235, 0.3);
 }
 
 .assetList {
@@ -547,7 +549,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-m);
-  border-bottom: 1px solid var(--color--border);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .assetDetails {
@@ -583,7 +585,7 @@
 
 .sizeArrow {
   margin: 0 var(--spacing-xs);
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
 }
 
 .optimizedSize {
@@ -600,10 +602,10 @@
 .assetLink {
   flex-shrink: 0;
   font-size: var(--font-size-s);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   text-decoration: none;
   padding: var(--spacing-s) var(--spacing-m);
-  border: 1px solid var(--color--selected--border);
+  border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
   transition:
     background-color 0.2s,
@@ -615,13 +617,13 @@
 }
 
 .assetLink:hover {
-  background-color: var(--color--primary--surface);
-  color: var(--color--primary--ink);
+  background-color: var(--accent-color);
+  color: white;
 }
 
 .assetLink:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color--focus--outline);
+  box-shadow: 0 0 0 2px rgba(0, 113, 235, 0.3);
 }
 
 .twoColumnGrid {
@@ -656,9 +658,9 @@
 .settingsForm h4 {
   margin-top: var(--spacing-m);
   margin-bottom: var(--spacing-m);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   font-size: 18px;
-  border-bottom: 1px solid var(--color--border);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: var(--spacing-xs);
 }
 
@@ -666,7 +668,7 @@
   font-size: 24px;
   font-weight: 500;
   margin-bottom: var(--spacing-l);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
 }
 
 .fieldRow {
@@ -712,7 +714,7 @@
 
 .note {
   padding: var(--spacing-s);
-  background-color: var(--color--surface-muted);
+  background-color: var(--light-bg-color);
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-m);
 }
@@ -737,17 +739,17 @@
 .resultsContainer {
   margin: var(--spacing-l) 0;
   padding: var(--spacing-m);
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
 }
 
 .optimizationSummaryTitle {
   font-size: 24px;
   margin-bottom: var(--spacing-m);
-  color: var(--color--ink-link);
-  border-bottom: 1px solid var(--color--border);
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: var(--spacing-s);
 }
 
@@ -759,11 +761,11 @@
 }
 
 .statsCard {
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   padding: var(--spacing-m);
   text-align: center;
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease-in-out;
 }
@@ -775,7 +777,7 @@
 }
 
 .clickableStatsCard:hover {
-  border-color: var(--color--selected--border);
+  border-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -792,7 +794,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: var(--color--primary--surface);
+  background-color: var(--accent-color);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease-in-out;
@@ -804,7 +806,7 @@
 }
 
 .clickableStatsCard:focus-visible {
-  outline: 2px solid var(--color--focus--border);
+  outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 
@@ -844,8 +846,8 @@
 }
 
 .savingsCard {
-  background-color: var(--color--surface);
-  border: 1px solid var(--color--border);
+  background-color: white;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: var(--spacing-m);
 }
@@ -855,7 +857,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-xs) 0;
-  border-bottom: 1px solid var(--color--border);
+  border-bottom: 1px solid var(--light-border-color, #f0f0f0);
 }
 
 .savingsRow:last-child {
@@ -864,12 +866,12 @@
 
 .savingsLabel {
   font-size: 14px;
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
 }
 
 .savingsValue {
   font-weight: 500;
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   font-size: 16px;
 }
 
@@ -884,8 +886,8 @@
 
 .infoText {
   font-size: 0.9rem;
-  color: var(--color--ink-subtle);
-  background-color: var(--color--surface-muted);
+  color: var(--light-body-color);
+  background-color: var(--light-bg-color);
   padding: var(--spacing-m);
   border-radius: var(--border-radius);
   margin: var(--spacing-s) 0 var(--spacing-m);
@@ -893,7 +895,7 @@
 }
 
 .infoText strong {
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   font-weight: 600;
 }
 
@@ -903,7 +905,7 @@
   align-items: center;
   margin-top: 4px;
   font-size: 0.8125rem;
-  color: var(--color--ink-muted);
+  color: #999999;
   line-height: 1.2;
   border: none;
   background: transparent;
@@ -917,7 +919,7 @@
   align-items: center;
   margin-top: 4px;
   font-size: 0.8125rem;
-  color: var(--color--ink-muted);
+  color: #999999;
   line-height: 1.2;
   border: none;
   background: transparent;
@@ -930,13 +932,13 @@
   align-items: center;
   justify-content: center;
   margin-left: 4px;
-  color: var(--color--ink-muted);
+  color: #999999;
   font-size: 10px;
   background-color: transparent;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 1px solid var(--color--border);
+  border: 1px solid #999999;
 }
 
 .hintWithDoc:focus {
@@ -944,7 +946,7 @@
 }
 
 .hintWithDoc:focus-visible {
-  box-shadow: 0 0 0 2px var(--color--focus--outline);
+  box-shadow: 0 0 0 2px var(--accent-color-light);
 }
 
 /* Documentation link styles */
@@ -969,15 +971,15 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: var(--color--primary--surface);
-  color: var(--color--primary--ink);
+  background-color: var(--accent-color);
+  color: white;
   font-size: 10px;
   font-weight: bold;
   transition: background-color 0.2s ease;
 }
 
 .docLink:hover .docLinkIcon {
-  background-color: var(--color--primary--surface);
+  background-color: var(--primary-color);
 }
 
 .docLink:focus {
@@ -985,18 +987,18 @@
 }
 
 .docLink:focus .docLinkIcon {
-  box-shadow: 0 0 0 2px var(--color--focus--outline);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Current Asset Preview */
 .currentAssetPreview {
   display: flex;
   align-items: center;
-  background-color: var(--color--surface);
+  background-color: white;
   border-radius: 8px;
   padding: var(--spacing-s);
   margin-bottom: var(--spacing-m);
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -1007,7 +1009,7 @@
   border-radius: 4px;
   overflow: hidden;
   margin-right: var(--spacing-m);
-  background-color: var(--color--surface-muted);
+  background-color: var(--light-bg-color);
   position: relative;
 }
 
@@ -1025,7 +1027,7 @@
 .assetPreviewTitle {
   font-size: var(--font-size-s);
   font-weight: 600;
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   margin-bottom: var(--spacing-xs);
   white-space: nowrap;
   overflow: hidden;
@@ -1034,7 +1036,7 @@
 
 .assetPreviewMeta {
   font-size: var(--font-size-xxs);
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xs);
@@ -1046,7 +1048,7 @@
 }
 
 .advancedOptionsGroup h4 {
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   margin-bottom: var(--spacing-m);
   font-size: var(--font-size-m);
 }
@@ -1074,8 +1076,8 @@
   visibility: hidden;
   width: auto;
   min-width: 120px;
-  background-color: var(--color--ink);
-  color: var(--color--tooltip--ink);
+  background-color: #333;
+  color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 6px 10px;
@@ -1102,8 +1104,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: var(--color--tooltip--surface) transparent transparent
-    transparent;
+  border-color: #333 transparent transparent transparent;
 }
 
 .paramTooltip:hover .tooltipText {
@@ -1121,7 +1122,7 @@
   min-width: 200px;
   max-width: 300px;
   background-color: rgba(0, 0, 0, 0.8);
-  color: var(--color--tooltip--ink);
+  color: #fff;
   text-align: center;
   border-radius: 4px;
   padding: var(--spacing-s) var(--spacing-m);
@@ -1158,22 +1159,22 @@
   width: 100%;
   margin-bottom: var(--spacing-m);
   padding: var(--spacing-m);
-  background-color: var(--color--surface-muted);
+  background-color: var(--light-bg-color);
   border-radius: 8px;
-  border: 1px solid var(--color--border);
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
 }
 
 .previewInfoBox svg {
   margin-right: var(--spacing-s);
-  color: var(--color--ink-link);
+  color: var(--accent-color);
   flex-shrink: 0;
 }
 
 .previewInfoBox p {
   margin: 0;
-  color: var(--color--ink);
+  color: var(--base-body-color);
   font-size: var(--font-size-s);
   line-height: 1.5;
 }

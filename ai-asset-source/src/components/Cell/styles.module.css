@@ -59,15 +59,15 @@
   justify-content: center;
   width: 26px;
   height: 26px;
-  border: 1px solid var(--ig-border);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 6px;
-  background: var(--color--surface);
+  background: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .selectionMarkSelected {
   border-color: var(--ig-accent);
-  background: var(--color--surface);
+  background: #fff;
 }
 
 .selectionIcon {
@@ -75,9 +75,9 @@
   display: block;
   width: 12px;
   height: 12px;
-  border: 1.5px solid var(--ig-border-strong);
+  border: 1.5px solid rgba(0, 0, 0, 0.22);
   border-radius: 3px;
-  background: var(--color--surface);
+  background: #fff;
   transition:
     border-color 140ms ease,
     background-color 140ms ease;
@@ -95,8 +95,8 @@
   top: 50%;
   width: 4px;
   height: 7px;
-  border-right: 2px solid var(--ig-accent-contrast);
-  border-bottom: 2px solid var(--ig-accent-contrast);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
   transform: translate(-50%, -62%) rotate(45deg);
 }
 

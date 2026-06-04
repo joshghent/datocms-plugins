@@ -167,7 +167,7 @@ const ResultsStats = ({
           style={{
             margin: '0 0 16px 0',
             padding: '16px',
-            backgroundColor: 'var(--color--surface-muted)',
+            backgroundColor: 'var(--light-bg-color)',
             borderRadius: '4px',
           }}
         >
@@ -175,7 +175,7 @@ const ResultsStats = ({
             <div
               style={{
                 marginRight: '8px',
-                color: 'var(--color--ink-link)',
+                color: 'var(--accent-color)',
                 display: 'flex',
               }}
             >
@@ -194,7 +194,7 @@ const ResultsStats = ({
                 />
               </svg>
             </div>
-            <p style={{ margin: 0, color: 'var(--color--ink)' }}>
+            <p style={{ margin: 0, color: 'var(--base-body-color)' }}>
               No images in your project are larger than{' '}
               <strong>{largeAssetThreshold}MB</strong>. Try lowering the minimum
               size threshold to optimize more assets.

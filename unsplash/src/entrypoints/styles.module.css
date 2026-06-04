@@ -20,7 +20,7 @@
 
 .searchFilterLabel {
   margin-right: 10px;
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
 }
 
 .search__input {
@@ -63,26 +63,17 @@
   vertical-align: middle;
   margin-right: 10px;
   border: 1px solid white;
-  outline: 1px solid var(--color--border);
+  outline: 1px solid var(--border-color);
   overflow: hidden;
   position: relative;
 }
 
 .colorSample.all {
-  background: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 }
 
 .colorSample.white {
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .colorSample.black {

@@ -30,7 +30,7 @@
 
 .subheading {
   margin: 0;
-  color: var(--color--ink-subtle);
+  color: var(--light-body-color);
 }
 
 .footer {

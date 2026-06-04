@@ -62,7 +62,7 @@ const getRecordBinPingIndicator = ({
   activeDeploymentUrl: string;
 }): { label: string; color: string } => {
   if (isHealthChecking || isConnecting) {
-    return { label: 'Checking ping...', color: 'var(--color--ink-warning)' };
+    return { label: 'Checking ping...', color: 'var(--warning-color)' };
   }
   if (connectionState?.status === 'connected') {
     return {
@@ -71,17 +71,14 @@ const getRecordBinPingIndicator = ({
     };
   }
   if (connectionState?.status === 'disconnected') {
-    return {
-      label: 'Disconnected (ping failed)',
-      color: 'var(--color--ink-danger)',
-    };
+    return { label: 'Disconnected (ping failed)', color: 'var(--alert-color)' };
   }
   if (activeDeploymentUrl) {
-    return { label: 'Connection pending', color: 'var(--color--ink-subtle)' };
+    return { label: 'Connection pending', color: 'var(--light-body-color)' };
   }
   return {
     label: 'Disconnected (no lambda URL configured)',
-    color: 'var(--color--ink-subtle)',
+    color: 'var(--light-body-color)',
   };
 };
 
@@ -201,7 +198,7 @@ const LAMBDA_ACTION_BUTTON_STYLE: React.CSSProperties = {
 };
 
 const CARD_STYLE: React.CSSProperties = {
-  border: '1px solid var(--color--border)',
+  border: '1px solid var(--border-color)',
   borderRadius: '6px',
   background: '#fff',
   padding: 'var(--spacing-l)',
@@ -211,14 +208,14 @@ const CARD_STYLE: React.CSSProperties = {
 
 const SUBTLE_TEXT_STYLE: React.CSSProperties = {
   margin: 0,
-  color: 'var(--color--ink-subtle)',
+  color: 'var(--light-body-color)',
   fontSize: 'var(--font-size-xs)',
 };
 
 const INFO_TEXT_STYLE: React.CSSProperties = {
   marginTop: 0,
   marginBottom: 'var(--spacing-s)',
-  color: 'var(--color--ink)',
+  color: 'var(--base-body-color)',
   fontSize: 'var(--font-size-s)',
 };
 
@@ -1055,7 +1052,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
                 marginTop: 0,
                 marginBottom: 'var(--spacing-s)',
                 fontSize: 'var(--font-size-s)',
-                color: 'var(--color--ink-subtle)',
+                color: 'var(--light-body-color)',
               }}
             >
               <span
@@ -1145,9 +1142,9 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
         {showConnectionError && (
           <div
             style={{
-              border: '1px solid var(--color--danger-soft--border)',
+              border: '1px solid rgba(var(--alert-color-rgb-components), 0.5)',
               borderRadius: '6px',
-              background: 'var(--color--danger-soft--surface)',
+              background: 'rgba(var(--alert-color-rgb-components), 0.08)',
               padding: 'var(--spacing-m)',
               marginBottom: 'var(--spacing-m)',
             }}
@@ -1170,7 +1167,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
         {showConnectionErrorDetails && (
           <div
             style={{
-              border: '1px solid var(--color--danger-soft--border)',
+              border: '1px solid rgba(var(--alert-color-rgb-components), 0.5)',
               borderRadius: '6px',
               background: '#fff',
               padding: 'var(--spacing-m)',
@@ -1243,7 +1240,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
                 <p
                   style={{
                     ...SUBTLE_TEXT_STYLE,
-                    color: 'var(--color--ink-danger)',
+                    color: 'var(--alert-color)',
                   }}
                 >
                   {lambdaSaveBlockReason}
@@ -1256,7 +1253,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
               style={{
                 ...SUBTLE_TEXT_STYLE,
                 marginTop: 'var(--spacing-s)',
-                color: 'var(--color--ink-danger)',
+                color: 'var(--alert-color)',
               }}
             >
               Open Advanced settings to configure API capture before saving.

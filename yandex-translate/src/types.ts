@@ -25,15 +25,10 @@ export type ConfigParameters =
   | LegacyParameters
   | FirstInstallationParameters;
 
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return value !== null && typeof value === 'object';
-}
-
 export function isValidParameters(
-  params: unknown,
+  params: ConfigParameters,
 ): params is ValidParameters {
   return (
-    isRecord(params) &&
     params &&
     'yandexApiKey' in params &&
     !!params.yandexApiKey &&
@@ -42,16 +37,13 @@ export function isValidParameters(
   );
 }
 
-export function normalizeParams(params: unknown): ValidParameters {
+export function normalizeParams(params: ConfigParameters): ValidParameters {
   if (isValidParameters(params)) {
     return params;
   }
 
   return {
-    yandexApiKey:
-      isRecord(params) && typeof params.yandexApiKey === 'string'
-        ? params.yandexApiKey
-        : '',
+    yandexApiKey: 'yandexApiKey' in params ? params.yandexApiKey : '',
     parametersVersion: '2',
     autoApplyRules: [],
   };

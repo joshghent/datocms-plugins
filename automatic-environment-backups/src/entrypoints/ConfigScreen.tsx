@@ -194,13 +194,10 @@ const getPingIndicator = ({
   activeDeploymentUrl: string;
 }): { label: string; color: string } => {
   if (connectionActivityMessage) {
-    return {
-      label: connectionActivityMessage,
-      color: 'var(--color--ink-warning)',
-    };
+    return { label: connectionActivityMessage, color: 'var(--warning-color)' };
   }
   if (isHealthChecking || isConnecting) {
-    return { label: 'Checking ping...', color: 'var(--color--ink-warning)' };
+    return { label: 'Checking ping...', color: 'var(--warning-color)' };
   }
   if (connectionState?.status === 'connected') {
     return {
@@ -209,17 +206,14 @@ const getPingIndicator = ({
     };
   }
   if (connectionState?.status === 'disconnected') {
-    return {
-      label: 'Disconnected (ping failed)',
-      color: 'var(--color--ink-danger)',
-    };
+    return { label: 'Disconnected (ping failed)', color: 'var(--alert-color)' };
   }
   if (activeDeploymentUrl) {
-    return { label: 'Connection pending', color: 'var(--color--ink-subtle)' };
+    return { label: 'Connection pending', color: 'var(--light-body-color)' };
   }
   return {
     label: 'Disconnected (no lambda URL configured)',
-    color: 'var(--color--ink-subtle)',
+    color: 'var(--light-body-color)',
   };
 };
 
@@ -1283,7 +1277,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
   };
 
   const cardStyle = {
-    border: '1px solid var(--color--border)',
+    border: '1px solid var(--border-color)',
     borderRadius: '6px',
     background: '#fff',
     padding: 'var(--spacing-l)',
@@ -1293,14 +1287,14 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
 
   const subtleTextStyle = {
     margin: 0,
-    color: 'var(--color--ink-subtle)',
+    color: 'var(--light-body-color)',
     fontSize: 'var(--font-size-xs)',
   };
 
   const infoTextStyle = {
     marginTop: 0,
     marginBottom: 'var(--spacing-s)',
-    color: 'var(--color--ink)',
+    color: 'var(--base-body-color)',
     fontSize: 'var(--font-size-s)',
   };
 
@@ -1319,7 +1313,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
   const backupScheduleInfoTextStyle: CSSProperties = {
     marginTop: 0,
     marginBottom: 'var(--spacing-m)',
-    color: 'var(--color--ink)',
+    color: 'var(--base-body-color)',
     fontSize: '12px',
     lineHeight: '1.35',
   };
@@ -1341,7 +1335,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
   };
 
   const overviewRowStyle: CSSProperties = {
-    border: '1px solid var(--color--border)',
+    border: '1px solid var(--border-color)',
     borderRadius: '6px',
     padding: 'var(--spacing-m)',
     background: '#fff',
@@ -1463,7 +1457,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
               marginTop: 0,
               marginBottom: 'var(--spacing-s)',
               fontSize: 'var(--font-size-s)',
-              color: 'var(--color--ink-subtle)',
+              color: 'var(--light-body-color)',
             }}
           >
             <span
@@ -1574,9 +1568,9 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
         {connectionErrorSummary && (
           <div
             style={{
-              border: '1px solid var(--color--danger-soft--border)',
+              border: '1px solid rgba(var(--alert-color-rgb-components), 0.5)',
               borderRadius: '6px',
-              background: 'var(--color--danger-soft--surface)',
+              background: 'rgba(var(--alert-color-rgb-components), 0.08)',
               padding: 'var(--spacing-m)',
               marginBottom: 'var(--spacing-m)',
             }}
@@ -1599,7 +1593,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
         {showConnectionDetails && connectionErrorDetails.length > 0 && (
           <div
             style={{
-              border: '1px solid var(--color--danger-soft--border)',
+              border: '1px solid rgba(var(--alert-color-rgb-components), 0.5)',
               borderRadius: '6px',
               background: '#fff',
               padding: 'var(--spacing-m)',
@@ -1661,7 +1655,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
               style={{
                 ...subtleTextStyle,
                 marginBottom: 'var(--spacing-s)',
-                color: 'var(--color--ink-danger)',
+                color: 'var(--alert-color)',
               }}
             >
               {backupOverviewError}

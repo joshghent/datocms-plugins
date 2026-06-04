@@ -371,8 +371,8 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
                   style={{
                     textAlign: 'center',
                     padding: 'var(--spacing-l)',
-                    color: 'var(--color--ink-subtle)',
-                    backgroundColor: 'var(--color--surface-muted)',
+                    color: 'var(--light-body-color)',
+                    backgroundColor: 'var(--light-bg-color)',
                     borderRadius: 'var(--border-radius)',
                   }}
                 >
@@ -389,7 +389,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
                         justifyContent: 'space-between',
                         alignItems: 'center',
                         padding: 'var(--spacing-s)',
-                        backgroundColor: 'var(--color--surface-muted)',
+                        backgroundColor: 'var(--light-bg-color)',
                         borderRadius: 'var(--border-radius)',
                         marginBottom: 'var(--spacing-xs)',
                       }}
@@ -432,7 +432,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
             <FieldGroup>
               <div
                 style={{
-                  backgroundColor: 'var(--color--surface-muted)',
+                  backgroundColor: 'var(--light-bg-color)',
                   padding: 'var(--spacing-m)',
                   borderRadius: 'var(--border-radius)',
                   marginBottom: 'var(--spacing-m)',
@@ -453,7 +453,7 @@ export default function ConfigScreen({ ctx }: { ctx: RenderConfigScreenCtx }) {
                   style={{
                     margin: '0',
                     fontSize: 'var(--font-size-s)',
-                    color: 'var(--color--ink-subtle)',
+                    color: 'var(--light-body-color)',
                   }}
                 >
                   <strong>Note:</strong> Mass duplication will overwrite all
