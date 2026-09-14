@@ -220,6 +220,9 @@ function sanitizeStructuredTextValue(
 ): Record<string, unknown> {
   return {
     ...value,
+    // With nested: true, block and inlineBlock records live inside the document.
+    // Their existing IDs must be removed before copying them to a new record.
+    document: sanitizeBlockDataForCreation(value.document),
     blocks: value.blocks
       ? (value.blocks as unknown[]).map((b) => sanitizeBlockDataForCreation(b))
       : undefined,

@@ -87,6 +87,76 @@ function block(id: string, itemTypeId: string): Record<string, unknown> {
 }
 
 describe('record creation preflight', () => {
+  it('validates and creates localized Structured Text with new nested blocks', async () => {
+    const localeData = Object.fromEntries(
+      ['en', 'fr-BE'].map((locale) => [
+        locale,
+        {
+          body_article: {
+            schema: 'dast',
+            document: {
+              type: 'root',
+              children: [0, 1, 2, 3].map((index) => ({
+                type: 'block',
+                item: {
+                  ...block(`embedded-${locale}-${index}`, 'paragraph-type'),
+                  attributes: { text: `Paragraph ${index} in ${locale}` },
+                },
+              })),
+            },
+          },
+        },
+      ]),
+    );
+    const source = groupedInstance({ localeData });
+    const original = structuredClone(source);
+    const validateNew = vi.fn(async () => {});
+    const create = vi.fn(async () => ({ id: 'record-1' }));
+
+    const mapping = await migrateGroupedBlocksToRecords(
+      clientWithItemMethods({ validateNew, create }),
+      [source],
+      'new-model',
+      projectLocales,
+      {},
+      vi.fn(),
+    );
+
+    const expectedRequest = {
+      item_type: { type: 'item_type', id: 'new-model' },
+      body_article: Object.fromEntries(
+        ['en', 'fr-BE'].map((locale) => [
+          locale,
+          {
+            schema: 'dast',
+            document: {
+              type: 'root',
+              children: [0, 1, 2, 3].map((index) => ({
+                type: 'block',
+                item: {
+                  type: 'item',
+                  relationships: {
+                    item_type: {
+                      data: { type: 'item_type', id: 'paragraph-type' },
+                    },
+                  },
+                  attributes: { text: `Paragraph ${index} in ${locale}` },
+                },
+              })),
+            },
+          },
+        ]),
+      ),
+    };
+    expect(validateNew).toHaveBeenCalledExactlyOnceWith(expectedRequest);
+    expect(create).toHaveBeenCalledExactlyOnceWith(expectedRequest);
+    expect(mapping).toEqual({
+      'source-block-1': 'record-1',
+      'root-1_0': 'record-1',
+    });
+    expect(source).toEqual(original);
+  });
+
   it('does not synthesize absent locales and preserves file metadata', async () => {
     const validatedRequests: Array<Record<string, unknown>> = [];
     const createdRequests: Array<Record<string, unknown>> = [];
